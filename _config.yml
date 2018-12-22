@@ -3,7 +3,8 @@
 # url is the full website URL
 # baseurl is the website's URL without the hostname
 
-# If you are building a simple GitHub user page (https://username.github.io) then use these settings:
+# If you are building a simple GitHub user page (https://username.github.io)
+# then use these settings:
 url: "https://singhalrk.github.io"
 baseurl: ""
 
@@ -11,7 +12,8 @@ baseurl: ""
 #url: "http://username.github.io/projectname"
 #baseurl: "/projectname"
 
-# Of course don't forget to change the username and projectname to YOUR username and project
+# Of course don't forget to change the username and projectname to YOUR username
+# and project
 
 # Name of website
 title: Raghav Singhal's Blog
@@ -24,20 +26,21 @@ description: A virtual proof that name is awesome!
 # List of links in the navigation bar
 navbar-links:
   About Me: "Raghav Singhal"
-  Publications: https://singhalrk.github.io/2018-12-22-steins.md
+  Publications: https://singhalrk.github.io/2018-12-22-steins/
   Author's home: "http://singhalrk.github.io"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/img/avatar-icon.png"
 
-# If you want to have an image logo in the top-left corner instead of the title text,
+# If you want to have an image logo in the top-left corner instead of the
+# title text,
 # then specify the following parameter
 # title-img: /path/to/image
 
 # --- Background colour/image options --- #
 
-# Personalize the colors in your website. Colour values can be any valid CSS colour
+# Personalize the colors in your website. Color values - any valid CSS color
 
 navbar-col: "#F5F5F5"
 navbar-text-col: "#404040"
@@ -49,7 +52,8 @@ footer-col: "#F5F5F5"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
 
-# Alternatively, the navbar, footer, and page background can be set to use background images
+# Alternatively, the navbar, footer, and page background can be set to
+# use background images
 # instead of colour
 
 # navbar-img: "/img/bgimage.png"
@@ -64,9 +68,11 @@ author:
   name: Raghav Singahl
 
 # Select your active Social Network Links.
-# Uncomment the links you want to show in the footer and add your information to each link.
+# Uncomment the links you want to show in the footer and add your information
+# to each link.
 # You can reorder the items to define the link order.
-# If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
+# If you want to add a new link that isn't here, you'll need to also edit the
+# file _data/SocialNetworks.yml
 social-network-links:
   rss: true
   email: "singhal.raghav@gmail.com"
@@ -109,7 +115,8 @@ url-pretty: "singhalrk.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 #gtm: ""
 
 # Matomo (aka Piwik) Web statistics
-# Uncomment the following section to enable Matomo. The opt-out parameter controls
+# Uncomment the following section to enable Matomo. The opt-out parameter
+# controls
 # whether or not you want to allow users to opt out of tracking.
 
 #matomo:
@@ -119,7 +126,8 @@ url-pretty: "singhalrk.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Comments --- #
 
-# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
+# Fill in your Disqus shortname (NOT the userid) if you want to support
+# Disqus comments
 # disqus: ""
 
 # To use Facebook Comments, fill in a Facebook App ID
