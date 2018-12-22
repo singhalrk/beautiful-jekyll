@@ -25,7 +25,6 @@ description: A virtual proof that name is awesome!
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "Raghav Singhal"
   Publications: https://singhalrk.github.io/2018-12-22-steins/
   Author's home: "http://singhalrk.github.io"
 
