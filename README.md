@@ -1,291 +1,205 @@
-# Beautiful Jekyll
+# tufte-jekyll theme
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/daattali/20)
-[![Gem Version](https://badge.fury.io/rb/beautiful-jekyll-theme.svg)](https://badge.fury.io/rb/beautiful-jekyll-theme)
+The *Tufte-Jekyll* blog theme is based on the github repository by Edward Tufte [here](https://github.com/edwardtufte/tufte-css), which was orginally created by Dave Leipmann, but is now labeled under Edward Tufte's moniker. I borrowed freely from the Tufte-CSS repo and have transformed many of the typographic and page-structural features into a set of custom Liquid tags that make creating content using this style much easier than writing straight HTML. Essentially, if you know markdown, and mix in a few custom Liquid tags, you can be creating a website with this document style in short order.
 
-> *Copyright 2018 [Dean Attali](https://deanattali.com)*
+Please be aware that the feature parity between the tufte-css repository and this project is not perfect. It is very close, but this Jekyll theme has additional CSS to scratch some of my own itches. One example is that the sidenote's typography is vertically spaced in my CSS so they are on the same baseline grid as the body text and it doesn't hurt my eyes when I look at them. Another example is the optional use of color to style links. The current tufte.css repo doesn't allow that, but my opinion is that hey, this is the web. It shouldn't have to ape the way a book looks exactly.  I attempt to stay true to the overall sensibility of the tufte.css repo, but I am not going to sacrifice anything that I think reduces the usability or esthetics of this theme in the service of exact feature parity. Just as I have 'forked' the tufte.css, you are more than welcome to modify this theme to suit your own tastes and specific needs.
 
-**Beautiful Jekyll** is a ready-to-use template to help you create an awesome website quickly. Perfect for personal sites, blogs, or simple project websites.  [Check out a demo](https://deanattali.com/beautiful-jekyll) of what you'll get after just two minutes.  You can also look at [my personal website](https://deanattali.com) to see it in use, or see examples of websites other people created using this theme [here](#showcased-users-success-stories).
+## Demo
 
-**If you enjoy this theme, please consider [supporting me](https://www.paypal.me/daattali/20) for developing and maintaining this template.**
+A sample site with self-documenting content is available [here](http://clayh53.github.io/tufte-jekyll/) on github pages.
 
-<p align="center">
-  <a href="https://www.paypal.me/daattali">
-    <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" />
-  </a>
-</p>
+## Installation
 
-### Table of contents
+I'm not going to go into great detail here. I am just going to assume that anyone interested in either Jekyll, Edward Tufte's work or Github has some basic skills. I created this with Ruby 2.2.0 and Jekyll 2.5.3. There is absolutely nothing exotic going on here, so you can probably make any recent version of Jekyll work with this setup.
 
-- [Prerequisites](#prerequisites)
-- [Build your website in 3 steps](#build-your-website-in-3-steps)
-- [Add your own content](#add-your-own-content)
-- [Last important thing: YAML front matter ("parameters" for a page)](#last-important-thing-yaml-front-matter-parameters-for-a-page)
-- [Features](#features)
-- [Creating a User Page vs a Project Page](#creating-a-user-page-vs-a-project-page)
-- [Showcased users (success stories!)](#showcased-users-success-stories)
-- [Advanced: local development](#advanced-local-development-using-docker)
-- [FAQ and support](#faq-and-support)
-- [Credits and contributions](#credits)
-
-## Prerequisites
-
-- You need to have a GitHub account. If you don't have one, [sign up here](https://github.com/join) - it takes one minute. This is where your website will live - if you sign up with username `johnsmith` then your website will be `https://johnsmith.github.io`.
-- It would be helpful to understand what Markdown is and how to write it. Markdown is just a way to take a piece of text and format it to look a little nicer.  For example, this whole instruction set that you're reading is written in markdown - it's just text with some words being bold/larger/italicized/etc. I recommend taking 5 minutes to learn markdown [with this amazingly easy yet useful tutorial](https://markdowntutorial.com/).
-
-## Build your website in 3 steps
-
-Getting started is *literally* as easy as 1-2-3 :smile:
-Scroll down to see the steps involved, but here is a 40-second video just as a reference as you work through the steps.
-
-![Installation steps](img/install-steps.gif)
-
-### 1. Fork this repository
-
-(Assuming you are on this page and logged into GitHub) Fork this repository by clicking the *Fork* button on the top right corner. Forking means that you now copied this whole project and all the files into your account.
-
-### 2. Rename the repository to `<yourusername>.github.io`
-
-This will create a GitHub User page ready with the **Beautiful Jekyll** template that will be available at `https://<yourusername>.github.io` within a couple minutes.  To do this, click on *Settings* at the top (the cog icon) and there you'll have an option to rename.
-
-### 3. Customize your website settings
-
-Edit the `_config.yml` file to change all the settings to reflect your site. To edit the file, click on it and then click on the pencil icon (watch the video tutorial above if you're confused).  The settings in the file are fairly self-explanatory and I added comments inside the file to help you further. Any line that begins with a pound sign (`#`) is a comment, and the rest of the lines are actual settings.
-
-Another way to edit the config file (or any other file) is to use [prose.io](https://prose.io/), which is just a simple interface to allow you to more intuitively edit files or add new files to your project.
-
-After you save your changes to the config file (by clicking on *Commit changes* as the video tutorial shows), your website should be ready in a minute or two at `https://<yourusername>.github.io`. Every time you make a change to any file, your website will get rebuilt and should be updated in about a minute or so.
-
-You can now visit your shiny new website, which will be seeded with several sample blog posts and a couple other pages. Your website is at `https://<yourusername>.github.io` (replace `<yourusername>` with your user name). Do not add `www` to the URL - it will not work!
-
-**Note:** The video above goes through the setup for a user with username `daattalitest`. I only edited one setting in the `_config.yml` file in the video, but **you should actually go through the rest of the settings as well. Don't be lazy, go through all the settings :)**
-
-## Add your own content
-
-To add pages to your site, you can either write a markdown file (`.md`) or you can write an HTML file directly.  It is much easier to write markdown than HTML, so I suggest you do that (use the [tutorial I mentioned above](https://markdowntutorial.com/) if you need to learn markdown). You can look at some files on this site to get an idea of how to write markdown. To look at existing files, click on any file that ends in `.md`, for example [`aboutme.md`](./aboutme.md). On the next page you can see some nicely formatted text (there is a word in bold, a link, bullet points), and if you click on the pencil icon to edit the file, you will see the markdown that generated the pretty text. Very easy!
-
-In contrast, look at [`index.html`](./index.html). That's how your write HTML - not as pretty. So stick with markdown if you don't know HTML.
-
-Any file that you add inside the [`_posts`](./_posts) directory will be treated as a blog entry.  You can look at the existing files there to get an idea of how to write blog posts.  After you successfully add your own post, you can delete the existing files inside [`_posts`](./_posts) to remove the sample posts, as those are just demo posts to help you learn.
-
-As mentioned previously, you can use [prose.io](https://prose.io/) to add or edit files instead of doing it directly on GitHub, it can be a little easier that way.
-
-## Last important thing: YAML front matter ("parameters" for a page)
-
-In order to have your new pages use this template and not just be plain pages, you need to add [YAML front matter](https://jekyllrb.com/docs/front-matter/) to the top of each page. This is where you'll give each page some parameters that I made available, such as a title and subtitle. I'll go into more detail about what parameters are available later. If you don't want to use any parameters on your new page (this also means having no title), then use the empty YAML front matter:
+So copy, pull, download a zipfile or whatever and fire it up.
 
 ```
----
----
+cd ~/thatPlaceYouPutIt/tufte-jekyll
+jekyll build
+jekyll serve -w
 ```
 
-If you want to use any parameters, write them between the two lines. For example, you can have this at the top of a page:
+And then point your browser at localhost:4000/tufte-jekyll
+
+You can also use `jekyll serve -w --baseurl ''` to remove `/tufte-jekyll` from the url and serve your site directly from localhost:4000. This only affects your local preview. See [Setting your baseurl correctly](#setting-your-baseurl-correctly) for more details.
+
+## Configuration
+
+### Jekyll site building options
+
+I have created a very simple site options file in the ```_data``` directory that contains two settings currently. The file in the github repo looks like this:
+```
+mathjax: true
+lato_font_load: true
+```
+Removing either 'true' value will prevent the jekyll site building process from adding links to either the Mathjax library or the Google Fonts Lato font as a fallback for the Gill Sans. Set these values to blank if you want to really streamline your page loading time.
+
+### SASS
+
+I am using Sass to create the css file used by this theme. If you would like to change things like fonts, text colors, background colors and so forth, edit the ```_scss/_settings.scss``` file. This file gets loaded first when Jekyll constructs the master CSS file from the tufte.scss SASS file, and contains SASS variables that influence the appearance of the site. The one variable that may be of interest to some is the ```$link-style``` variable, which can be set to either ```underline``` or ```color```. This will determine if your links are styled using the ```$contrast-color``` variable with no underlining, or whether they are styled using light underlining as seen on the [*tufte-css*](https://github.com/edwardtufte/tufte-css) repo.
+
+### Social icons
+
+You can edit the ```_data/social.yml``` file and put in your own information for the footer links
+
+### Silly-ass badge in the upper left
+
+In the ```assets/img``` directory is a file called ```badge_1.png```. This file's parent is ```badge_1.psd``` and is an editable photoshop file with layers for the letters comprising the initials. Change them to suit your fancy. Or just substitute another badge in its place. You can edit the ```_includes/header.html``` file and change the file that it points too. Find your favorite Tufte emoji and fly your freak flag proudly.
+
+## Some things about the things
+
+I needed to create several custom Liquid tags to wrap content in the right kind of tags. You will create your posts in the normal way in the ```_posts``` directory, and then edit them with Github-Flavored Markdown. In addition to all that GFM goodness, you can use the following custom Liquid tags in your content area.
+
+Note that these tags *have been altered* from Version 1 of this theme to accommodate some responsive features, namely the ability to reveal hidden sidenotes, margin notes and margin figures by tapping either a superscript or a symbol on small screens. This requires you to add a parameter to the tag that is a unique *ID* for each tag instance on the page. What the id is called is not important, but it is important that it be unique for each individual element on the page. I would recommend in the interest of sanity to give names that are descriptive, like ```'sn-id-1'``` or ```'mf-id-rhino'```.
+
+### Notes about quotes in Liquid tags
+
+The custom Liquid tags are designed to simplify writing content and displaying it with the *tufte-css* look. Here are a few notes on using quotes inside the tags.
+
+* Liquid tags work with either double or single quotes to surround the tag parameters, as you'll see in all the examples below.
+
+* You can use single quotes and apostrophes in the text inside tag parameters, as long as all the parameters are surrounded by double quotes. Liquid will automatically process them correctly. For example: `{% newthought "I'm so smart!" %}` will render as `I'm so smart!`. If the text inside one of the parameters contains a single quote, then use double quotes to surround the parameters. Conversely, if the text inside one of the parameters contains a double quote, use single quotes to surround the parameters.
+
+* One can also use a double quote in the text inside a tag parameter by 'escaping' the double quote by placing a backslash directly in front of it, for example: `{% newthought "\"I'm so smart!\", she thought." %}` will render as `"I'm so smart!", she thought.`
+
+* You can use HTML inside of a tag parameter. Originally, Markdown support inside the Liquid parameters strings was spotty, but I recently added some code that should allow most Markdown inside the tag parameter strings. You can use either single quotes, or escaped double quotes in the HTML. For example, both of the following tags will work:
 
 ```
----
-title: Contact me
-subtitle: Here you'll find all the ways to get in touch with me
----
+{% newthought "Example website: <a href='http://example.com'>example label</a>" %}
+```
+```
+{% newthought "Example website: <a href=\"http://example.com\">example label</a>" %}
 ```
 
-You can look at the top of [`aboutme.md`](./aboutme.md) or [`index.html`](./index.html) as more examples.
+The [demo site's Edge Cases entry](http://clayh53.github.io/tufte-jekyll/articles/15/Edge-Cases) has an example toward the bottom illustrating HTML inside of a tag parameter.
 
-**Important takeaway: ALWAYS add the YAML front matter, which is two lines with three dashes, to EVERY page. If you have any parameters, they go between the two lines.**    
-If you don't include YAML then your file will not use the template.
+### Epigraph
 
-## Features
+This tag will render its three components into a standalone epigraph. This can be used as an introduction to a page or to a section within a page. As with most things Markdown, surround the epigraph with a blank line above and below it.
 
-### Mobile-first
-**Beautiful Jekyll** is designed to look great on both large-screen and small-screen (mobile) devices. Load up your site on your phone or your gigantic iMac, and the site will work well on both, though it will look slightly different.
-
-### Customizable
-
-Many personalization settings in `_config.yml`, such as setting your name and site's description, changing the background colour/image, setting your avatar to add a little image in the navigation bar, customizing the links in the menus, customizing what social media links to show in the footer, etc.
-
-### Allowing users to leave comments
-
-If you want to enable comments on your site, Beautiful Jekyll supports either the [Disqus](https://disqus.com/) comments plugin or [Facebook](https://developers.facebook.com/docs/plugins/comments) comments.
-
-To use Disqus, simply sign up to [Disqus](https://disqus.com/) and add your Disqus shortname to the `disqus` parameter in the `_config.yml` file.
-
-To use Facebook comments, create a Facebook app using [Facebook developers](https://developers.facebook.com/docs/apps/register), and add the Facebook App ID to the `fb_comment_id` parameter in `_config.yml`.
-
-If either `disqus` or `fb_comment_id` parameters are set in the configuration file, then all blog posts will have comments turned on by default. To turn off comments on a particular blog post, add `comments: false` to the YAML front matter. If you want to add comments on the bottom of a non-blog page, add `comments: true` to the YAML front matter.
-
-### Adding Google Analytics to track page views
-
-Beautiful Jekyll lets you easily add Google Analytics to all your pages. This will let you track all sorts of information about visits to your website, such as how many times each page is viewed and where (geographically) your users come from.  To add Google Analytics, simply sign up to [Google Analytics](https://www.google.com/analytics/) to obtain your Google Tracking ID, and add this tracking ID to the `google_analytics` parameter in `_config.yml`.
-
-### Sharing blog posts on social media
-
-By default, all blog posts will have buttons at the bottom of the post to allow people to share the current page on Twitter/Facebook/LinkedIn.  You can choose to enable/disable specific social media websites in the `_config.yml` file. You can also turn off the social media buttons on specific blog posts using `social-share: false` in the YAML front matter.
-
-### RSS feed
-
-Beautiful Jekyll automatically generates a simple RSS feed of your blog posts, to allow others to subscribe to your posts.  If you want to add a link to your RSS feed in the footer of every page, find the `rss: false` line in `_config.yml` and change it to `rss: true`.
-
-### Page types
-
-- **post** - To write a blog post, add a markdown or HTML file in the `_posts` folder. As long as you give it YAML front matter (the two lines of three dashes), it will automatically be rendered like a blog post. Look at the existing blog post files to see examples of how to use YAML parameters in blog posts.
-- **page** - Any page outside the `_posts` folder that uses YAML front matter will have a very similar style to blog posts.
-- **minimal** - If you want to create a page with minimal styling (ie. without the bulky navigation bar and footer), assign `layout: minimal` to the YAML front matter.
-- If you want to completely bypass the template engine and just write your own HTML page, simply omit the YAML front matter. Only do this if you know how to write HTML!
-
-### YAML front matter parameters
-
-These are the main parameters you can place inside a page's YAML front matter that **Beautiful Jekyll** supports.
-
-Parameter   | Description
------------ | -----------
-title       | Page or blog post title
-subtitle    | Short description of page or blog post that goes under the title
-tags        | List of tags to categorize the post. Separate the tags with commas and place them inside square brackets. Example: `[personal, self help, finance]`
-bigimg      | Include a large full-width image at the top of the page.  You can either give the path to a single image, or provide a list of images to cycle through (see [my personal website](https://deanattali.com/) as an example).
-comments    | If you want do add Disqus comments to a specific page, use `comments: true`. Comments are automatically enabled on blog posts; to turn comments off for a specific post, use `comments: false`. Comments only work if you set your Disqus id in the `_config.yml` file.
-show-avatar | If you have an avatar configured in the `_config.yml` but you want to turn it off on a specific page, use `show-avatar: false`. If you want to turn it off by default, locate the line `show-avatar: true` in the file `_config.yml` and change the `true` to `false`; then you can selectively turn it on in specific pages using `show-avatar: true`.
-image       | If you want to add a personalized image to your blog post that will show up next to the post's excerpt and on the post itself, use `image: /path/to/img`.
-share-img   | If you want to specify an image to use when sharing the page on Facebook or Twitter, then provide the image's full URL here.
-social-share | If you don't want to show buttons to share a blog post on social media, use `social-share: false` (this feature is turned on by default).
-use-site-title | If you want to use the site title rather than page title as HTML document title (ie. browser tab title), use `use-site-title: true`. When set, the document title will take the format `Site Title - Site Description` (eg. `My website - A virtual proof that name is awesome!`). By default, it will use `Page Title` if it exists, or `Site Title` otherwise.
-layout      | What type of page this is (default is `post` for blog posts and `page` for other pages. You can use `minimal` if you don't want a header and footer)
-js          | List of local JavaScript files to include in the page (eg. `/js/mypage.js`)
-ext-js      | List of external JavaScript files to include in the page (eg. `//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js`). External JavaScript files that support [Subresource Integrity (SRI)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) can be specified using the `href` and `sri` parameters eg.<br/>`href: "//code.jquery.com/jquery-3.1.1.min.js"`<br/>`sri: "sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="`
-css         | List of local CSS files to include in the page
-ext-css      | List of external CSS files to include in the page. External CSS files using SRI (see `ext-js` parameter) are also supported.
-googlefonts | List of Google fonts to include in the page (eg. `["Monoton", "Lobster"]`)
-gh-repo   | If you want to show GitHub buttons at the top of a post, this sets the GitHub repo name (eg. `daattali/beautiful-jekyll`). You must also use the `gh-badge` parameter to specify what buttons to show.
-gh-badge  | Select which GitHub buttons to display, available options are: [star, watch, fork, follow]. You must also use the `gh-repo` parameter to specify the GitHub repo.
-
-### Advanced features (including how to use a custom URL address for your site)
-
-I wrote [a blog post](https://deanattali.com/2015/03/12/beautiful-jekyll-how-to-build-a-site-in-minutes/) describing some more advanced features that I used in my website that are applicable to any Jekyll site.  It describes how I used a custom URL for my site (deanattali.com instead of daattali.github.io), how to add a Google-powered search into your site, and provides a few more details about having an RSS feed.
-
-## Creating a User Page vs a Project Page
-
-If you're not sure what the difference is, you can probably safely ignore this section.
-
-If you want to use this theme to host a website that will be available at `https://YOURUSERNAME.github.io`, then you do not need to read this section. That is called a User Page, you can only have one User Page in your GitHub account, and it is what you get by default when forking this project.
-
-If you want to use this theme to create a website for a particular repository, it will be available at `https://YOURUSERNAME.github.io/REPONAME`, and that is called a [Project Page](https://help.github.com/articles/user-organization-and-project-pages/). You can have a Project Page for each repository you have on GitHub. There are two important things to note when creating a project page:
-
-1. In the configuration file (`_config.yml`), you should set `baseurl` to be `/projectname` instead of `""`.
-2. Project Pages are served from a branch named `gh-pages`, and you should be generating all the website content on that branch. When you fork Beautiful Jekyll, you'll already have a `gh-pages` branch but you should delete it and generate it again from the `master` branch. The reason is that the `gh-pages` branch in its current form does not have the updated code of Beautiful Jekyll, so you need to create that branch from the `master` branch (which is where all my new features and work go into).
-
-## Showcased users (success stories!)
-
-To my huge surprise, Beautiful Jekyll has been used in over 500 websites in its first 6 months alone! Here is a hand-picked selection of some websites that use Beautiful Jekyll.
-
-Want your website featured here? [Contact me](https://deanattali.com/aboutme#contact) to let me know about your website.
-
-### Project/company websites
-
-| Website | Description |
-| :------ |:----------- |
-| [repidemicsconsortium.org/](https://www.repidemicsconsortium.org/) | R Epidemics Consortium |
-| [vaccineimpact.org](https://www.vaccineimpact.org/) | Vaccine Impact Modelling Consortium |
-| [derekogle.com/fishR](http://derekogle.com/fishR/) | Using R for Fisheries Analyses |
-| [bigdata.juju.solutions](http://bigdata.juju.solutions) | Creating Big Data solutions Juju Solutions |
-| [joecks.github.io/clipboard-actions](http://joecks.github.io/clipboard-actions/) | Clipboard Actions - an Android app |
-| [deanattali.com/shinyjs](http://deanattali.com/shinyjs/) | shinyjs - an R package |
-| [blabel.github.io](http://blabel.github.io) | Library for canonicalising blank node labels in RDF graphs |
-| [reactionic.github.io](http://reactionic.github.io) | Create iOS and Android apps with React and Ionic |
-| [ja2-stracciatella.github.io](http://ja2-stracciatella.github.io) | Jagged Alliance 2 Stracciatella |
-| [ddocent.com](http://ddocent.com/) | RADSeq Bioinformatics and Beyond |
-| [guitarlessons.org](https://www.guitarlessons.org/) | Free online guitar lessons for all |
-| [terremotocentroitalia.info](https://www.terremotocentroitalia.info/) | Information about the 2016 Italy earthquake |
-
-
-### Personal websites
-
-| Website | Who | What |
-| :------ |:--- | :--- |
-| [deanattali.com](https://deanattali.com) | Dean Attali | Creator of Beautiful Jekyll |
-| [ouzor.github.io](http://ouzor.github.io) | Juuso Parkkinen | Data scientist |
-| [derekogle.com](http://derekogle.com/) | Derek Ogle | Professor of Mathematical Sciences and Natural Resources |
-| [melyanna.github.io](http://melyanna.github.io/) | Melyanna | Shows off her nice art |
-| [chauff.github.io](http://chauff.github.io/) | Claudia Hauff | Professor at Delft University of Technology |
-| [kootenpv.github.io](http://kootenpv.github.io/) | Pascal van Kooten | Data analytics |
-| [sjackman.ca](http://sjackman.ca) | Shaun Jackman | PhD candidate in bioinformatics |
-| [anudit.in](http://www.anudit.in/) | Anudit Verma | Engineering student |
-| [sharepointoscar.github.io](http://sharepointoscar.github.io) | Oscar Medina | Independent Hacker |
-| [ocram85.com](https://ocram85.com) | Marco Blessing | A personal blog about PowerShell and automation |
-| [khanna.cc](https://khanna.cc/) | Harry Khanna | Law and software |
-
-## Advanced: Local development using Docker
-
-Beautiful Jekyll is meant to be so simple to use that you can do it all within the browser. However, if you'd like to develop locally on your own machine, that's possible too if you're comfortable with command line. Follow these simple steps set that up with Docker:
-
-1. Make sure you have [Docker](https://www.docker.com/) installed.
-
-2. Clone your repository locally.
-
-    ```bash
-    git clone https://github.com/<your_username>/<your_username>.github.io.git
-    ```
-
-3. Run the following shell commands to build the docker image and start the container for the first time:
-
-    ```bash
-    cd <repository_folder>
-    docker build -t beautiful-jekyll "$PWD"
-    docker run -d -p 4000:4000 --name beautiful-jekyll -v "$PWD":/srv/jekyll beautiful-jekyll
-    ```
-
-
-Now that Docker is set up, you do not need to run the above steps again. You can now view your website at http://localhost:4000/. You can start the container again in the future with:
-
-```bash
-docker start beautiful-jekyll
+```
+{% epigraph ' "How did you go bankrupt?" Two ways. Gradually, then suddenly.' 'Ernest Hemingway' ' "The Sun Also Rises" ' %}
 ```
 
-And you can stop the server with:
+### New thought
 
-```bash
-docker stop beautiful-jekyll
+This tag will render its contents in small caps. Useful at the beginning of new sections:
+
+```
+{% newthought "This will be rendered in small caps" %} blah blah
 ```
 
-Whenever you make any changes to `_config.yml`, you must stop and re-start the server for the new config settings to take effect.
+### Sidenote
 
-Disclaimer: I personally am NOT using local development so I don't know much about running Jekyll locally. If you follow this route, please don't ask me questions because unfortunately I honestly won't be able to help!
+This tag inserts a *sidenote* in the content, which is like a footnote, only its in the spacious right-hand column. It is automatically numbered, starting over on each page. Just put it in the content like you would insert a footnote like so:
 
-## FAQ and support
+```
+blah lorem blah{% sidenote "sidenote-id" "This is a random sidenote" %} blah blah
+```
+And it will add the html spans and superscripts. On smaller screens, tapping on the number will reveal the sidenote!
 
-If you need any help, I suggest heading over to the [Jekyll support forum](https://talk.jekyllrb.com/).
+The `full-width` page layout will not display side notes. (It's a full-width page and has no margin)
 
-Beautiful Jekyll is actively used by thousands of people with wildly varying degrees of competency, so it's impossible to answer all the questions that may arise. Below are answers to a few very common questions. Most questions that I get asked are not directly related to this theme, and instead are more general questions about Jekyll or web development. Many such questions can be answered by reading the [Jekyll documentation](https://jekyllrb.com/) or with Google.
+### Margin note
 
-#### How do I change the number of posts per page OR the colour of the navigation bar OR the image in the navigation bar OR ...?
+This tag is essentially the same as a sidenote, but heh, no number. Like this:
 
-Beautiful Jekyll is built to be very customizable, and as such, many questions about "how do I change ..." can be answered by looking at the `_config.yml` file. The configuration file has many adjustable parameters to customize your site.
+```
+lorem nobeer toasty critters{% marginnote "margin-note-id" "Random thought when drinking" %} continue train of thought
+```
+On smaller screens, tapping on the <span>&#8853;</span> symbol will open up the margin note.
 
-#### How do I add a favicon to my site?
+The `full-width` page layout will not display margin notes. (It's a full-width page and has no margin)
 
-Easy! Just place a valid `favicon.ico` (or another valid favicon image) in the root directory of your project. And then wait! It can take a while to update.
+### Full width image
 
-#### How do I move the blog to another page instead of having it on the home page?
+This tag inserts an image that spans both the main content column and the side column:
 
-The default style of Beautiful Jekyll is to feature the blog feed on the front page. But for many sites that's not the ideal structure, and you may want to have a separate dedicated page for the blog posts. To have the blog hosted on a different URL (for example at `<mysite.com>/blog`), copy the `index.html` file into a folder with the same name as the desired page (for example, to `blog/index.html`), and in the `_config.yml` file you need to add a parameter `paginate_path: "/<page name>/page:num/"` (for example `paginate_path: "/blog/page:num/"`).
+```
+blah blah
+{% fullwidth "assets/img/rhino.png" "A caption for the image" %}
+blah
+```
 
-#### What size do you recommend using for the `bigimg` photos?
+or
 
-Unfortunately, this is a no-answer! There isn't a one-size-fits-all solution to this, because every person will view your site on a different browser with different dimensions. Some browsers will have very wide aspect ratio, some will be narrower, some will be vertical (such as phones), different phones have different screens, etc. The image will always be centered, so the only tip I can give is that you should make sure the important part of the image is in the middle so that it'll always show. Other than that, every browser will show a different clipping of the image.
+```
+blah blah
+{% fullwidth "http://example.com/image.jpg" "A caption for the image" %}
+blah
+```
 
-## Credits
+Note the absence of a leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
 
-This template was not made entirely from scratch. I would like to give special thanks to:
-- [Barry Clark](https://github.com/barryclark) and his project [Jekyll Now](https://github.com/barryclark/jekyll-now), from whom I've taken several ideas and code snippets, as well as some documenation tips.
-- [Iron Summit Media](https://github.com/IronSummitMedia) and their project [Bootstrap Clean Blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog), from which I've used some design ideas and some of the templating code for posts and pagination.
+Also note that fullwidth images need to be included *on their own line* in order for the captions to work correctly.
 
-I'd also like to thank [Dr. Jekyll's Themes](https://drjekyllthemes.github.io/), [Jekyll Themes](http://jekyllthemes.org/), and another [Jekyll Themes](http://jekyllrc.github.io/jekyllthemes/) for featuring Beautiful Jekyll in their Jekyll theme directories.
+### Main column image
 
-## Contributions
+This tag inserts an image that is confined to the main content column:
 
-If you find anything wrong or would like to contribute in any way, feel free to create a pull request/open an issue/send me a message.  Any comments are welcome!
+```
+blah blah
+{% maincolumn "assets/img/rhino.png" "This is the caption" %}
+blah
+```
 
-Thank you to [all contributors](https://github.com/daattali/beautiful-jekyll/graphs/contributors). Special thanks to  [@OCram85](https://github.com/OCram85) for contributing multiple times as well as helping with discussions.
+or
 
-If you do fork or clone this project to use as a template for your site, I would appreciate if you keep the link in the footer to this project.  I've noticed that several people who forked this repo removed the attribution and I would prefer to get the recognition if you do use this :)
+```
+blah blah
+{% maincolumn "http://example.com/image.jpg" "This is the caption" %}
+blah
+```
 
-## Known limitations
+No need for an ID in this tag because it doesn't have any doohickies that open and close on narrow screens. Again note the absence of the leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
 
-- If you have a project page and you want a custom 404 page, you must have a custom domain.  See https://help.github.com/articles/custom-404-pages/.  This means that if you have a regular User Page you can use the 404 page from this theme, but if it's a website for a specific repository, the 404 page will not be used.
+And just like fullwidth images, main column images need to be included on their own line in order for the captions to work correctly.
+
+### Margin figure
+
+This tag inserts and image in the side column area. Note that an id needs to be specified:
+
+```
+blah blah {% marginfigure "margin-figure-id" "assets/img/rhino.png" "This is the caption" %} blah
+```
+
+or
+
+```
+blah blah {% marginfigure "margin-figure-id" "http://example.com/image.jpg" "This is the caption" %} blah
+```
+
+This needs an ID parameter so that it can be clicked and opened on small screens. Again note the absence of the leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
+
+The `full-width` page layout will not display margin figures. (It's a full-width page and has no margin)
+
+### Mathjax
+
+For those wanting to use this Jekyll theme for academic writing, the new Kramdown Markdown engine will accurately parse *MathJax* expressions as long as they are enclosed in a pair of double dollar signs like this:
+
+```$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$```
+
+As a side note - if you do not need the math ability, navigate to the ```_data/options.yml``` file and change the mathjax to 'false' and it will not load the mathjax javascript.
+
+### Setting your baseurl correctly
+
+In the `_config.yml` file is a setting called `baseurl`. This is used by the Jekyll engine to construct all the proper links in the static site. Right now it is set to `/tufte-jekyll` since this project is using Github Pages and you are required to set the project name as the baseurl to serve from Github Pages.
+
+Set this to your own project name if you're going to serve your site from Github Pages. Be sure to include the leading slash, and no trailing slash. For example: `/my-project-name`
+
+For a full explanation of setting your baseurl to work with Github Pages, see the [Project Page URL Structure](http://jekyllrb.com/docs/github-pages/#project-page-url-structure) section of the Jekyll documentation.
+
+To serve from anywhere else besides Github Pages, use a blank baseurl in your `_config.yml` file:
+
+```
+baseurl:
+```
+
+This is `baseurl:` with nothing after it. Not even a space.
+
+### Rakefile
+
+I have added a boilerplate Rakefile directly from the [jekyll-rake-boilerplate repo](https://github.com/gummesson/jekyll-rake-boilerplate). This saves you a small amount of time by prepending the date on a post name and populated the bare minimum of YAML front matter in the file. Please visit the link to the repo to find out how it runs. One thing to note is that there should be *no* space between the task and the opening bracket of your file name. ```rake post["Title"]``` will work while ```rake post ["Title"]``` will not.
+
+There is another rakefile (UploadtoGithub.Rakefile) included that only has one task in it - an automated upload to a *Github Pages* location of the site. This is necessary because of the plugins used by this theme. It does scary stuff like move your ```_site``` somewhere safe, delete everything, move the ```_site``` back and then do a commit to the ```gh-pages``` branch of your repository. You can read about it [here](http://blog.nitrous.io/2013/08/30/using-jekyll-plugins-on-github-pages.html). You would only need to use this if you are using Github project pages to host your site. Integration with the existing Rakefile is left as an exercise for the reader.
