@@ -4,7 +4,7 @@ author:
   email: raghav.k.singhal@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
   I am a PhD student at New York University. I study generative modeling
-  and applications of Machine Learning to healthcare.
+  and applications of machine learning to healthcare.
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
