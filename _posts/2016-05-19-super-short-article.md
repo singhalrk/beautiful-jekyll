@@ -6,8 +6,11 @@ categories: misc
 permalink: "/blog/"
 ---
 
-I am trying to post what I read publicly to keep myself motivated.
+Over the years, reading has meant differenet things to me depending on the
+situation I am in. One day I will write more about it here.
 
 1. Jugalbandi - Vinay Sitapati
 2. Choices - Shivshankar Menon
 3. Half-Lion - Vinay Sitapati
+4. Mao - Jon Halliday and Jung Chang
+5. Reading now: Which Country Has the World's Best Health Care? - Ezekiel Emanuel
