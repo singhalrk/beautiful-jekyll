@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: post
 title: CV
-permalink: /about/
+permalink: /cv/
 ---
 
-Testing
+Add cv here
