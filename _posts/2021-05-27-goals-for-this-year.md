@@ -5,16 +5,16 @@ title: "Goals for 2021"
 
 Some goals I want to achieve this year:
 
-1. Run a half-marathon
-2. Run a marathon
-3. Learn JAX
+1. Write 3 papers
+2. Run a half-marathon
+3. Run a marathon
+4. Learn JAX
 4. Write blog posts on conformal prediction, $e$-values, coupled MCMC (theory and applications)
-5. Write 3 papers
-6. Make blogging a weekly habit. To make myself think about things outside work
+5. Make blogging a weekly habit. To make myself think about things outside work
    and to get better writing practice.
-7. Write notes for statistics and machine learning with an emphasis on
+6. Write notes for statistics and machine learning with an emphasis on
    practical methods.
-8. Learn to drive
+7. Learn to drive
 
 <!-- You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. -->
 <!-- You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which -->
